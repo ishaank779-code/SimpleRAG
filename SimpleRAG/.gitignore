@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.env
+uploads/
+faiss_index/
+*.faiss
+*.pkl
+.streamlit/
+.idea/
+.vscode/

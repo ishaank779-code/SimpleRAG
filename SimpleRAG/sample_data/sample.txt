@@ -1,0 +1,27 @@
+SimpleRAG Project Overview
+==========================
+
+SimpleRAG is a complete Retrieval-Augmented Generation system built with Python FastAPI and MySQL.
+
+Key Components:
+1. Document Upload - Users can upload PDF, TXT or Markdown files.
+2. Text Extraction - PDF text is extracted using pypdf library.
+3. Chunking - Long documents are split into smaller overlapping chunks of 500 characters.
+4. Embeddings - Each chunk is converted into a 384-dimensional vector using the all-MiniLM-L6-v2 model from sentence-transformers.
+5. Vector Storage - Vectors are stored in FAISS (Facebook AI Similarity Search) for fast similarity search.
+6. Metadata Storage - Document information, chunk content and chat history are stored in MySQL database.
+7. Query Processing - When a user asks a question, the system embeds the question, finds the most similar chunks using FAISS, and then uses an LLM to generate an answer based on those chunks.
+
+Benefits of RAG:
+- Reduces hallucination because answers are grounded in real documents.
+- Allows the LLM to answer questions about private or recent data without fine-tuning.
+- Provides source citations so users can verify the answer.
+
+Technology Stack:
+- Backend Framework: FastAPI
+- Database: MySQL with SQLAlchemy ORM
+- Vector Database: FAISS (CPU version)
+- Embedding Model: sentence-transformers/all-MiniLM-L6-v2
+- LLM: Any OpenAI-compatible API (OpenAI, Groq, Together AI, etc.)
+
+This project is designed to be short yet full-fledged so that students and developers can understand the complete RAG pipeline and use it as a portfolio project.
